@@ -1,0 +1,18 @@
+
+{% extends 'livros/base.html' %}
+{% block conteudo %}
+<form method='POST'  onsubmit="return confirmDeletion()">
+    <div class="container">
+        {% csrf_token %}
+        <h4 style="text-align: center;"><i>Confirmar exclusao do Livro: {{item.Nome}}</i></h4>
+        <button class="btn btn-default"><a href="{% url 'lista' %}">Cancelar</a></button>
+        <button class="btn btn-danger" type="submit">Confirmar</button>
+   
+    </div>
+</form>    
+<script>
+    function confirmDeletion() {
+        return confirm('Você tem certeza que deseja excluir o livro "{{ item.Nome }}"?');
+    }
+</script>
+{% endblock %}

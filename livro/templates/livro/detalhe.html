@@ -1,0 +1,21 @@
+{% extends 'livro/base.html' %}
+{% block conteudo %}
+<h1 style="text-align: center;"><i>Detalhe de Livros</i></h1>
+<div class="container">
+    <table class="table table-hover table-bordered">
+        <tr>
+            <th>Id:</th>
+            <th>Nome:</th>
+            <th>Finalizado:</th>
+            <th>Resenha:</th>
+        </tr>
+         <tr>
+            <td>{{dados.id}}</td>
+            <td>{{dados.Nome}}</td>
+            <td>{{dados.is_finalizado}}</td>
+            <td>{{dados.Resenha}}</td>
+        </tr>
+        </table>
+</div>
+
+    {% endblock %}

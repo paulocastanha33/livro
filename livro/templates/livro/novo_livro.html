@@ -1,0 +1,14 @@
+{% extends 'livro/base.html' %}
+{% block conteudo %}
+{% load crispy_forms_tags %}
+<h4 style="text-align: center;"><i>Formulário Novo Livro</i></h4>
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+       
+        {{formulario | crispy}}
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </form>
+    
+</div>
+{% endblock %}

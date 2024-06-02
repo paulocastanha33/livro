@@ -1,0 +1,21 @@
+{% extends 'livro/base.html' %}
+{% load crispy_forms_tags %}
+{% block conteudo %}
+<br><br>
+<h1 style="text-align: center;">Você saiu do sistema!</h1>
+<div class="container" style="padding:30px; width: 15vw;
+height: 15vh;
+background: lightblue;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;">
+    
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        
+        <a href="{%url 'login' %}">LOGAR NOVAMENTE</a>
+    </form>
+</div>
+{% endblock %}

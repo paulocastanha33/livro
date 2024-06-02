@@ -1,0 +1,24 @@
+{% extends 'livro/base.html' %}
+{% load crispy_forms_tags %}
+{% block conteudo %}
+<br><br>
+
+<div class="container" style="padding:30px; width: 50vw;
+height: 82vh;
+background: lightblue;
+display: flex;
+flex-direction: row;
+justify-content: center;
+border-radius: 20px;
+align-items: center;">
+    
+    <form method="POST">
+        <h1 style="text-align: center;">Cadastrar Novo Usuario</h1>
+        {% csrf_token %}
+        {{ formulario | crispy }}
+        
+        <button class="btn btn-primary"  type="submit">Criar Novo Usuario</button>
+        <a href="{% url 'login' %}">Se já possui uma conta, entre aqui!</a>
+    </form>
+</div>
+{% endblock %}
